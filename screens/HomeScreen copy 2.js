@@ -1,10 +1,8 @@
-import React, { useMemo } from 'react';
-import { StyleSheet, View, Text, Image, SafeAreaView, ScrollView } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import MasonryItem from '../components/MasonryItem';
 
 import MasonryList from '@react-native-seoul/masonry-list';
-
-
 export default function App() {
   const languages = [
     {
@@ -152,120 +150,33 @@ export default function App() {
       text: 'Chair and Table',
     },
   ];
-
-  const languagess = [
-    {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    }, {
-      id: 'id123',
-      imgURL:
-        'https://ii1.pepperfry.com/media/catalog/product/m/o/568x625/modern-chaise-lounger-in-grey-colour-by-dreamzz-furniture-modern-chaise-lounger-in-grey-colour-by-dr-tmnirx.jpg',
-      text: 'Pioneer LHS Chaise Lounger in Grey Colour',
-    },
-  ];
-
-
-
-
-  const renderItem = ({ item }) => {
-    return <MasonryItem item={item} key={item.id} />;
-  };
-
+  //<Text>{item.text}</Text>
+  const renderItem = ({ item }) => (
+    <MasonryItem item={item} key={item.id} />
+  );
   return (
-    <SafeAreaView style={styles.container}>
+    <ScrollView style={styles.container}>
+      {/* <MasonryC
+        data={languages}
+      /> */}
+
       <MasonryList
-        // ListFooterComponent={<Text>Selam</Text>}
+        style={{ alignSelf: 'stretch' }}
         contentContainerStyle={{
           paddingHorizontal: 24,
           alignSelf: 'stretch',
         }}
-        numColumns={3}
+        numColumns={2}
         data={languages}
         renderItem={renderItem}
-        style={{ padding: 0, marginLeft: -20, marginRight: -20 }}
       />
-    </SafeAreaView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    margin: 0,
-    padding: 0
+    backgroundColor: '#fff'
   }
 });
