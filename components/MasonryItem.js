@@ -3,23 +3,46 @@ import { Image, View, Text, StyleSheet } from 'react-native';
 import { windowHeight, windowWidth } from '../utils/Dimentions';
 
 const FormInput = ({ item }) => {
-  const randomBool = useMemo(() => Math.random() < 0.5, []);
+  // const randomBool = useMemo(() => Math.random() < 0.5, []);
 
   return (
-    <View key={item.id} style={{ flex: 1, marginHorizontal: 1.5, padding: 0 }}>
-      <Image
-        source={{ uri: item.imgURL }}
+    <View key={item.id} style={styles.outerView}>
+      <View style={styles.innerView}>
+        {item.medias ? item.medias.map((mediaUrl) => {
+          return (
+            <Image
+              source={{ uri: mediaUrl }}
+              style={styles.images}
+              resizeMode="cover"
+            />
+          )
+        }) : <></>}
+        {/* <Image
+          source={{ uri: item.imgURL }}
+          style={styles.images}
+          resizeMode="cover"
+        />
+        <Image
+          source={{ uri: item.imgURL }}
+          style={styles.images}
+          resizeMode="cover"
+        /> */}
+      </View>
+      <View
         style={{
-          height: randomBool ? 100 : 200,
-          alignSelf: 'stretch',
-          alignContent: 'stretch',
-          alignItems: 'stretch',
-          margin: 0,
-          padding: 0
+          borderBottomColor: 'gray',
+          borderBottomWidth: 1,
+          paddingTop: 5,
+          marginBottom: 5
         }}
-        resizeMode="cover"
       />
       {/* <Text
+        style={{
+          marginTop: 8,
+        }}
+      >
+        {item.text}
+      </Text><Text
         style={{
           marginTop: 8,
         }}
@@ -33,17 +56,19 @@ const FormInput = ({ item }) => {
 export default FormInput;
 
 const styles = StyleSheet.create({
-  masonary: {
-    margin: 0,
+  outerView: {
+    flex: 1,
+    marginHorizontal: 1.5,
     padding: 0,
-    width: '100%',
-    height: windowHeight,
   },
-  item: {
+  innerView: { flexDirection: 'row' },
+  images: {
+    height: 250,
+    alignSelf: 'stretch',
+    alignContent: 'stretch',
+    alignItems: 'stretch',
+    marginLeft: 5,
     padding: 0,
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: 200,
+    flex: 1
   }
 });
