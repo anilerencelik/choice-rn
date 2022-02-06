@@ -10,18 +10,17 @@ import MasonryList from '@react-native-seoul/masonry-list';
 export default function App() {
   const { logout } = useContext(AuthContext);
 
-  const [posts, setPosts] = useState()
+  const [posts, setPosts] = useState([])
 
   const getPosts = async () => {
     try {
       const response = await fetch('http://10.100.0.11:5000/api/post/', {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
-          'mediaCount': '3'
         },
       });
       const json = await response.json();
-      setPosts(json);
+      setPosts(json ? json : []);
     } catch (error) {
       console.error(error);
     }
